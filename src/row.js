@@ -1,30 +1,28 @@
 import {useState, useEffect} from 'react'
 import axios from './axios.js'
 
-function Row({title , fetchURL}) {
+function Row({title , fetchUrl}) {
 
-    const [movies,setmovies] = useState([])
+    const [movies,setmovies] = useState()
+
 
     useEffect(()=>{
-         async function fetchdata(){
-            const request = await axios.get(fetchURL)
-            console.log(request.data.results)
-            setmovies(request.data.results)
-
-            return request
-         }
-         fetchdata()
-
-
-    },[])
+      axios.get(fetchUrl)
+      .then(d=>{
+        setmovies(d.data)
+        console.log(d.data)
+      })
+    },[fetchUrl])
     
-
+  
   return (
     <>
-        <h2> {title }</h2>
+    <div className=''>
+        <h2> {title}</h2>
          <div className=' '>
           
           
+         </div>
          </div>
     </>
   )
