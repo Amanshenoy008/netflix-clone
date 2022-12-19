@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-    <div className="flex  h-screen w-screen items-center justify-center flex-col ">
-    <div className=" ">
+    <div className="flex items-center justify-center flex-col  ">
+    <div className="  ">
     <Row title={'Netflix original'}  fetchUrl={requests.fetchnetflixoriginal} />
     </div>
     <div>
