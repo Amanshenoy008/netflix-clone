@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from './axios.js'
 
-function Row({title , fetchUrl}) {
+function Row({title , fetchUrl , islargerow}) {
 
     const [movies,setmovies] = useState()
     const baseurl = 'https://image.tmdb.org/t/p/original/'
@@ -10,7 +10,8 @@ function Row({title , fetchUrl}) {
       axios.get(fetchUrl)
       .then(d=>{
         setmovies(d.data)
-        console.log(d.data)
+        
+        
       })
     },[fetchUrl])
     
@@ -18,13 +19,13 @@ function Row({title , fetchUrl}) {
   return (
     <>
     <div className=''>
-        <h2 className='font-extrabold  '> {title}</h2>
-         <div className='flex '>
+        <h2 className='font-extrabold p-2 text-center '> {title}</h2>
+         <div  className='flex gap-2 overflow-x-scroll overflow-y-hidden p-2 no-scrollbar '>
           {
             movies &&
             movies.results.map((d)=>(
-              
-                <img src={baseurl+d.poster_path} alt={d.name} width='80' />
+                
+                <img  key={d.id}src={baseurl+(islargerow ? d.poster_path : d.backdrop_path)} alt={d.name} width='100' height='100' className='hover:scale-110 hover:ease-in duration-300' />
 
 
 
