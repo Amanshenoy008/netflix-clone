@@ -25,7 +25,7 @@ function Banner() {
 
    
   return (
-    <header className=' text-white'  style={{backgroundImage:`url(${bg})`}}>
+    <header className=' text-white w-screen h-1/2 bg-contain bg-no-repeat	object-fill'  style={{backgroundImage:`url(${bg})`}}>
       <div>
       <h1 className=' text-start '>{ (load ? 'loading' : movies.title)}</h1>
       <div className='flex gap-3  font-bold text-white'>
