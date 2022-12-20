@@ -1,6 +1,6 @@
 import Row from "./row";
 import requests from "./request";
-
+import Banner from './banner'
 
 function App() {
 
@@ -8,6 +8,9 @@ function App() {
   return (
     <>
     <div className="  ">
+      <div className=" ">
+      <Banner />
+      </div>
     <div className="  ">
     <Row title={'Netflix original'}  fetchUrl={requests.fetchnetflixoriginal} islargerow={true} />
     </div>
