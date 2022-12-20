@@ -16,20 +16,23 @@ function Banner() {
     //setm(d.data.results)
     setmovies(d.data.results[Math.floor(Math.random() * d.data.results.length)])
     //console.log(movies)
-
+    setload(false)
    })
   
    },[])
     console.log(movies)
+   const bg = (load ? '': baseurl+movies.backdrop_path)
 
-    
    
   return (
-    <header className='' >
+    <header className=' text-white'  style={{backgroundImage:`url(${bg})`}}>
       <div>
-      { /* title*/ movies.title}
-      
-
+      <h1 className=' text-start '>{ (load ? 'loading' : movies.title)}</h1>
+      <div className='flex gap-3  font-bold text-white'>
+        <button className='bg-slate-600 '>Play</button>
+        <button className=' bg-slate-600'>My List</button>
+      </div>
+      <p className='text-justify w-2/3'>{ (load ? 'loading' : movies.overview)}</p>
       </div>
 
 
