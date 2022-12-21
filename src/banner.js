@@ -27,7 +27,7 @@ function Banner() {
   return (
     <>
     
-    <header className=' text-white  w-screen h-screen  bg-cover bg-no-repeat	border-solid border-black border-2 '  style={{backgroundImage:`url(${bg})`}}>
+    <header className=' text-white  w-screen h-screen  bg-cover bg-no-repeat	 '  style={{backgroundImage:`url(${bg})`}}>
       <Navbar />
       
       <div className=' p-3 pl-7 flex flex-col h-screen justify-center '>
