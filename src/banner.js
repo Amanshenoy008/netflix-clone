@@ -25,12 +25,12 @@ function Banner() {
 
    
   return (
-    <header className=' text-white w-screen h-1/2 bg-contain bg-no-repeat	object-fill'  style={{backgroundImage:`url(${bg})`}}>
+    <header className=' text-white w-screen h-screen  bg-cover bg-no-repeat	border-solid border-black border-2'  style={{backgroundImage:`url(${bg})`}}>
       <div>
       <h1 className=' text-start '>{ (load ? 'loading' : movies.title)}</h1>
       <div className='flex gap-3  font-bold text-white'>
-        <button className='bg-slate-600 '>Play</button>
-        <button className=' bg-slate-600'>My List</button>
+        <button className='bg-slate-600 opacity-50'>Play</button>
+        <button className=' bg-slate-600 opacity-50'>My List</button>
       </div>
       <p className='text-justify w-2/3'>{ (load ? 'loading' : movies.overview)}</p>
       </div>

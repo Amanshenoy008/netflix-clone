@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className="  ">
+    <div className="overflow-x-hidden  ">
       <div className=" ">
       <Banner />
       </div>
