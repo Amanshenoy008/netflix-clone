@@ -20,12 +20,12 @@ function Row({title , fetchUrl , islargerow}) {
     <>
     <div className=' text-white bg-black'>
         <h2 className='font-extrabold p-2 text-start  '> {title}</h2>
-         <div  className='flex gap-2 overflow-x-scroll overflow-y-hidden p-2 no-scrollbar ml-2 border-solid border-white'>
+         <div  className='flex gap-2 overflow-x-scroll overflow-y-hidden p-2 no-scrollbar ml-3 border-solid border-white'>
           {
             movies &&
             movies.results.map((d)=>(
                 
-              <img  key={d.id} src={baseurl+(islargerow ? d.poster_path : d.backdrop_path)} alt={d.name}   className=' w-1/5 hover:scale-110 hover:ease-in duration-300  border-solid border-white' />
+              <img  key={d.id} src={baseurl+(islargerow ? d.poster_path : d.backdrop_path)} alt={d.name}   className=' w-1/5 hover:scale-110 hover:ease-in duration-300 p-2 rounded' />
 
 
 

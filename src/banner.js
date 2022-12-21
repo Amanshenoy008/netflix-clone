@@ -31,7 +31,7 @@ function Banner() {
       <Navbar />
       
       <div className=' p-3 pl-7 flex flex-col h-screen justify-center '>
-      <h1 className=' text-start font-bold text-5xl'>{ (load ? 'loading' : movies.title)}</h1>
+      <h1 className=' text-start font-bold text-5xl'>{ (load ? 'loading' : movies?.title|| movies?.name || movies?.original_name)}</h1>
       <div className='flex gap-5  font-bold text-white p-3'>
         <button className='bg-slate-800 opacity-75 px-3  text-center'>Play</button>
         <button className=' bg-slate-800 opacity-75 px-3 text-center'>My List</button>
