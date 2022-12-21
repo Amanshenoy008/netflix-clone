@@ -19,7 +19,7 @@ function Row({title , fetchUrl , islargerow}) {
   return (
     <>
     <div className=' text-white bg-black'>
-        <h2 className='font-extrabold p-2 text-start  '> {title}</h2>
+        <h2 className='font-extrabold p-2 text-start  text-xl '> {title}</h2>
          <div  className='flex gap-2 overflow-x-scroll overflow-y-hidden p-2 no-scrollbar ml-3 border-solid border-white'>
           {
             movies &&

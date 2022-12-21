@@ -27,7 +27,7 @@ function Banner() {
   return (
     <>
     
-    <header className=' text-white  w-screen h-screen  bg-cover bg-no-repeat	 '  style={{backgroundImage:`url(${bg})`}}>
+    <header className=' text-white  w-screen h-1/3  bg-cover bg-no-repeat	 '  style={{backgroundImage:`url(${bg})`}}>
       <Navbar />
       
       <div className=' p-3 pl-7 flex flex-col h-screen justify-center '>
@@ -39,7 +39,7 @@ function Banner() {
       <p className='text-justify w-1/2'>{ (load ? 'loading' : movies.overview)}</p>
       </div>
 
-
+      <div className=' bg-gradient-to-t from-slate-900 w-screen h-21  text-black '> ..</div>
     </header>
     </>
   )
