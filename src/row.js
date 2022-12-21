@@ -1,5 +1,9 @@
 import {useState, useEffect} from 'react'
 import axios from './axios.js'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Modal from '@mui/material/Modal'
 
 function Row({title , fetchUrl , islargerow}) {
 
@@ -15,7 +19,25 @@ function Row({title , fetchUrl , islargerow}) {
       })
     },[fetchUrl])
     
-  
+    const [open, setOpen] = useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
+
+    
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: '#000',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+        color:'#fff'
+      }
+
+
   return (
     <>
     <div className=' text-white bg-black'>
@@ -24,10 +46,17 @@ function Row({title , fetchUrl , islargerow}) {
           {
             movies &&
             movies.results.map((d)=>(
-                
-              <img  key={d.id} src={baseurl+(islargerow ? d.poster_path : d.backdrop_path)} alt={d.name}   className=' w-1/5 hover:scale-110 hover:ease-in duration-300 p-2 rounded' />
-
-
+                <>
+              <img  key={d.id} src={baseurl+(islargerow ? d.poster_path : d.backdrop_path)} alt={d.name}  onClick={handleOpen} className='cursor-pointer w-1/5 hover:scale-110 hover:ease-in duration-300 p-2 rounded' />
+              
+      <Modal
+        open={open}
+        onClose={handleClose} >
+        <Box sx={style}>
+          Hi
+        </Box>
+      </Modal>
+              </>
 
             ))
           }
