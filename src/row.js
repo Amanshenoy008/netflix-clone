@@ -14,6 +14,7 @@ function Row({title , fetchUrl , islargerow}) {
         
         
       })
+      
     },[fetchUrl])
     
     
